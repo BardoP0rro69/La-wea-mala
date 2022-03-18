@@ -6,6 +6,13 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Terra" parent="." instance=ExtResource( 1 )]
+position = Vector2( 190, 412 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 496, 236 )
+position = Vector2( 451, 180 )
+
+[node name="Terra2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 206, 412 )
+
+[node name="Terra3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 174, 412 )
