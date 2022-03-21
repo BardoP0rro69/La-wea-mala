@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://kenney_pixelplatformer/Tiles/tile_0000.png" type="Texture" id=1]
+[ext_resource path="res://kenney_pixelplatformer/Tiles/tile_0002.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7, 7 )
+extents = Vector2( 18, 17.5 )
 
 [node name="Terra" type="StaticBody2D"]
 position = Vector2( -149, 479 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 274, -25 )
+position = Vector2( 316, -26.5 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 274, -25 )
-scale = Vector2( 1, 1 )
+position = Vector2( 316, -26 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )

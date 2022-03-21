@@ -4,19 +4,20 @@
 [ext_resource path="res://Escenes/cos.gd" type="Script" id=2]
 [ext_resource path="res://kenney_pixelplatformer/Characters/character_0000.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 21.5, 24.5 )
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 20.5
+height = 9.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "corriendo",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "parao",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "corriendo",
 "speed": 5.0
 } ]
 
@@ -24,12 +25,13 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 18.5, 11.5 )
-shape = SubResource( 1 )
+position = Vector2( 0.5, 1 )
+shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 18.5, 12 )
-scale = Vector2( 2.04167, 2.08333 )
+position = Vector2( 1, 1 )
+scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "corriendo"
+frame = 1
 playing = true
