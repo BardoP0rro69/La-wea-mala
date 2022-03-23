@@ -1,31 +1,18 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Escenes/Terra.tscn" type="PackedScene" id=1]
+[ext_resource path="res://StaticBody2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escenes/KinematicBody2D.tscn" type="PackedScene" id=2]
-[ext_resource path="res://kenney_pixelplatformer/Background/background_0010.png" type="Texture" id=3]
+[ext_resource path="res://StaticBody2D2.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Background0010" type="Sprite" parent="."]
-position = Vector2( 511.5, 302 )
-scale = Vector2( 42.4583, 25 )
-texture = ExtResource( 3 )
-
-[node name="Terra" parent="." instance=ExtResource( 1 )]
-position = Vector2( -57, 513 )
-scale = Vector2( 2, 2 )
-
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 534, 302 )
+position = Vector2( -173, 185 )
 
-[node name="Terra2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 14, 513 )
-scale = Vector2( 2, 2 )
+[node name="plataformes" type="Node2D" parent="."]
 
-[node name="Terra3" parent="." instance=ExtResource( 1 )]
-position = Vector2( -127, 513 )
-scale = Vector2( 2, 2 )
+[node name="StaticBody2D" parent="plataformes" instance=ExtResource( 1 )]
+position = Vector2( 87, 170 )
 
-[node name="Terra4" parent="." instance=ExtResource( 1 )]
-position = Vector2( -199, 513 )
-scale = Vector2( 2, 2 )
+[node name="StaticBody2D2" parent="plataformes" instance=ExtResource( 3 )]
+position = Vector2( 167, 130 )
