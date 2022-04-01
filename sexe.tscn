@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://StaticBody2D6.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Escenes/KinematicBody2D.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sexe.gd" type="Script" id=3]
+[ext_resource path="res://StaticBody2D7.tscn" type="PackedScene" id=4]
+[ext_resource path="res://StaticBody2D8.tscn" type="PackedScene" id=5]
+[ext_resource path="res://pez.jpg" type="Texture" id=6]
+[ext_resource path="res://Zombie.tscn" type="PackedScene" id=7]
+[ext_resource path="res://texto xd.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 113, 113.5 )
+
+[node name="sexe" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="TextoXd" type="Sprite" parent="."]
+position = Vector2( 1546, 778 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 8 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( -104, -47 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( 400, 271 )
+current = true
+
+[node name="plataformes" type="Node2D" parent="."]
+
+[node name="StaticBody2D" parent="plataformes" instance=ExtResource( 1 )]
+
+[node name="StaticBody2D2" parent="plataformes" instance=ExtResource( 4 )]
+position = Vector2( 249, 121 )
+
+[node name="StaticBody2D8" parent="plataformes" instance=ExtResource( 5 )]
+position = Vector2( 1229, 510 )
+
+[node name="Trofeo" type="Area2D" parent="."]
+
+[node name="Pez" type="Sprite" parent="Trofeo"]
+position = Vector2( 9501, 670 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trofeo"]
+position = Vector2( 9501, 669.5 )
+shape = SubResource( 1 )
+
+[node name="Zombie" parent="." instance=ExtResource( 7 )]
+position = Vector2( 798, 589 )
+
+[connection signal="body_entered" from="Trofeo" to="KinematicBody2D" method="_on_Trofeo_body_entered"]
+[connection signal="body_entered" from="Zombie" to="KinematicBody2D" method="_on_Zombie_body_entered"]

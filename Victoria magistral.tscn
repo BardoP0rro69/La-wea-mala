@@ -1,0 +1,130 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Escenes/KinematicBody2D.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Victoria magistral.gd" type="Script" id=2]
+[ext_resource path="res://Victory_Royale_Old_-_Fortnite.webp" type="Texture" id=3]
+[ext_resource path="res://Dab_2.png" type="Texture" id=4]
+[ext_resource path="res://cv4alvdnz8j61.png" type="Texture" id=5]
+[ext_resource path="res://c4dbc503340e98a70aedc0a542580909665ef34b_00.jpg" type="Texture" id=6]
+[ext_resource path="res://hqdefault.jpg" type="Texture" id=7]
+[ext_resource path="res://Perro_oliendo.jpg" type="Texture" id=8]
+[ext_resource path="res://sonic_patas.jpg" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 610.5, 20 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 3.5, 295.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 6.75, 302.5 )
+
+[node name="Victoria magistral" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="C4Dbc503340E98A70Aedc0A542580909665Ef34b00" type="Sprite" parent="."]
+position = Vector2( 515, 299 )
+scale = Vector2( 3.08434, 1.16406 )
+texture = ExtResource( 6 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -440, 176 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+margin_left = 2.0
+margin_top = 523.0
+margin_right = 1025.0
+margin_bottom = 563.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 518.5, 543 )
+shape = SubResource( 1 )
+
+[node name="Dab2" type="Sprite" parent="."]
+position = Vector2( 99, 248 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="VictoryRoyaleOld-Fortnite" type="Sprite" parent="."]
+position = Vector2( 513, 108 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 3 )
+
+[node name="Dab3" type="Sprite" parent="."]
+position = Vector2( -322, 169 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+offset = Vector2( 2096, 304 )
+
+[node name="Dab4" type="Sprite" parent="."]
+position = Vector2( 312, 239 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="Dab5" type="Sprite" parent="."]
+position = Vector2( 413, 239 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="Dab6" type="Sprite" parent="."]
+position = Vector2( 525, 250 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="Dab7" type="Sprite" parent="."]
+position = Vector2( 652, 247 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="Dab8" type="Sprite" parent="."]
+position = Vector2( 761, 246 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="Dab9" type="Sprite" parent="."]
+position = Vector2( 871, 246 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="Dab10" type="Sprite" parent="."]
+position = Vector2( 966, 241 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="Cv4Alvdnz8J61" type="Sprite" parent="."]
+position = Vector2( 878, 444 )
+rotation = 3.14159
+scale = Vector2( 0.07, 0.07 )
+texture = ExtResource( 5 )
+
+[node name="Hqdefault" type="Sprite" parent="."]
+position = Vector2( 51, 486 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+
+[node name="PerroOliendo" type="Sprite" parent="Hqdefault"]
+position = Vector2( 1825, -370 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+
+[node name="SonicPatas" type="Sprite" parent="Hqdefault/PerroOliendo"]
+position = Vector2( 490, -7.5 )
+texture = ExtResource( 9 )
+
+[node name="sis" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sis"]
+position = Vector2( -102, 293 )
+shape = SubResource( 2 )
+
+[node name="non" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="non"]
+position = Vector2( 1143.75, 266.5 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="sis" to="KinematicBody2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="sis" to="KinematicBody2D" method="_on_sis_body_entered"]
+[connection signal="body_entered" from="non" to="KinematicBody2D" method="_on_non_body_entered"]

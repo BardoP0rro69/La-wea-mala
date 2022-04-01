@@ -4,24 +4,25 @@
 [ext_resource path="res://plataforma 2.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 41.5, 0.5 )
+extents = Vector2( 20, 2 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
 } ]
 
-[node name="StaticBody2D2" type="StaticBody2D"]
+[node name="StaticBody2D3" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 446.5, 287.5 )
+position = Vector2( 529, 231 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 459, 318 )
-scale = Vector2( 0.2, 0.8 )
+position = Vector2( 536, 268 )
+scale = Vector2( 0.0942857, 0.990123 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
